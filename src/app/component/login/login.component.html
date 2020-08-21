@@ -1,0 +1,57 @@
+<div class="card">
+    <mat-card style=" width: 450px;height: 550px;padding:3%;">
+        <div fxLayout="column" style=" margin-top: 5%">
+            <mat-card-title>
+                <span class="blue">W</span>
+                <span class="red">E</span>
+                <span class="gold">B</span>
+                <span class="blue">S</span>
+                <span class="green">C</span>
+                <span class="red">R</span>
+                <span class="blue">A</span>
+                <span class="red">P</span>
+                <span class="gold">I</span>
+                <span class="blue">N</span>
+                <span class="green">G</span>
+            </mat-card-title>
+
+            <mat-card-content class="signIn">Sign in</mat-card-content>
+            <mat-card-content class="account">Use your WebScraping Account</mat-card-content>
+        </div>
+
+        <form [formGroup]="login">
+            <div class="email">
+                <mat-form-field appearance="outline" fxFlext=50 style="height:20%;width: 100%;">
+                    <mat-label>Email</mat-label>
+                    <input required matInput placeholder="Email" formControlName="email">
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="login.hasError('required', 'email')">
+                        Email is required
+                    </mat-error>
+                    <mat-error *ngIf="login.hasError('email', 'email')">
+                        Enter valid email
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="password">
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Password</mat-label>
+                    <input required matInput placeholder="password" formControlName="password" class="form-control" [type]="hide ? 'text' : 'password'">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+                    </mat-icon>
+                    <mat-error *ngIf="login.hasError('required', 'password')">
+                        Password is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </form>
+        <div class="buttons">
+            <button color="primary" mat-raised-button style="width: 35%">Forgot password</button>
+
+            <div class="accountButton">
+                <button color="primary" mat-raised-button style="width: 35%">Create account</button>
+                <button color="primary" mat-raised-button style="width: 30%" (click)="loginForm()">Login</button>
+            </div>
+        </div>
+    </mat-card>
+</div>
