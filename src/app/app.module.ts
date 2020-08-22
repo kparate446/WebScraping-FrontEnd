@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
+import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
+import { ResetpasswordComponent } from './component/resetpassword/resetpassword.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,6 +24,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   declarations: [
     AppComponent,
     LoginComponent,
+    ResetpasswordComponent,
+    ForgotpasswordComponent,
   ],
   imports: [
     BrowserModule,
