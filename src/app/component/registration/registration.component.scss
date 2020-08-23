@@ -1,0 +1,57 @@
+.card {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+}
+
+button {
+    font-size: 18px;
+}
+
+.blue {
+    color: rgb(55, 0, 255);
+}
+
+;
+.red {
+    color: red;
+}
+
+;
+.gold {
+    color: rgb(255, 187, 0);
+}
+
+;
+.green {
+    color: rgb(14, 85, 31);
+}
+
+;
+.mat-card-title {
+    display: flex;
+    font-size: 33px;
+}
+
+.signIn {
+    display: flex;
+    font-size: 27px;
+    padding-top: 15px;
+}
+
+.email {
+    padding-top: 30px;
+    font-size: 18px;
+}
+
+.password {
+    font-size: 18px;
+}
+
+.accountButton {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 20px;
+}

@@ -19,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { RegistrationComponent } from './component/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     LoginComponent,
     ResetpasswordComponent,
     ForgotpasswordComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,

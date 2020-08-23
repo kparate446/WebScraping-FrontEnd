@@ -18,4 +18,7 @@ export class UserService {
   resetpassword(data) {
     return this.HttpService.post(this.url + '/user/resetpassword', data);
   }
+  registration(data) {
+    return this.HttpService.post(this.url + '/user/register', data);
+  }
 }
