@@ -20,6 +20,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RegistrationComponent } from './component/registration/registration.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import {MatListModule} from '@angular/material/list';
+import { AddwebscrapingComponent } from './component/addwebscraping/addwebscraping.component';
+import { GetwebscrapingComponent } from './component/getwebscraping/getwebscraping.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,9 @@ import { RegistrationComponent } from './component/registration/registration.com
     ResetpasswordComponent,
     ForgotpasswordComponent,
     RegistrationComponent,
+    DashboardComponent,
+    AddwebscrapingComponent,
+    GetwebscrapingComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,8 @@ import { RegistrationComponent } from './component/registration/registration.com
     MatButtonModule,
     MatToolbarModule,
     MatDividerModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
