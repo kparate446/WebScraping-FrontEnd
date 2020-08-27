@@ -1,28 +1,42 @@
-<div class="page-container">
-    <div>
-        <p>
-            <mat-toolbar color="primary">
-                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-                <mat-icon>menu</mat-icon>
-            </button>
-                <span>WebScraping</span>
+<div class="dashboard">
+    <div class="toolbar">
+        <mat-toolbar style="background-color:#85C1E9">
+            <mat-toolbar-row>
+                <span>
+                    <button mat-icon-button (click)="sidenav.toggle()" class="menu">
+                        <mat-icon matTooltip="Main menu">menu</mat-icon>
+                    </button>
+                </span>
+                <img src="../../../assets/web-scraping-image.jpg" style="width: '1.5%'">
+                <span style="color:blue">WebScraping</span>
                 <span class="example-spacer"></span>
-                <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon>favorite</mat-icon>
-            </button>
-                <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-                <mat-icon>share</mat-icon>
-            </button>
-            </mat-toolbar>
-        </p>
+                <div class="rightside-icons">
+                    <button mat-icon-button class="refresh" [routerLink]="['/']">
+                        <mat-icon matTooltip="Refresh">refresh</mat-icon>
+                    </button>
+                    <button class="signout-button" mat-stroked-button color="primary">Signout</button>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
     </div>
-    <div class="sidebar" style="margin-top: -0.7%;">
-        <div class="list-items">
-            <i class="material-icons">bookmark_border</i> Add Website
-        </div>
-        <div class="list-items">
-            <i class="material-icons">bookmark_border</i>Get Website
-        </div>
+
+    <div class="sidenav-div">
+        <mat-sidenav-container class="sidenav-container" style="background-color:#D0D3D4">
+            <mat-sidenav class="matSidenav" #sidenav mode="side">
+                <div>
+                    <button mat-button class="navbutton" [routerLink]="['/addwebscraping']">
+                        <mat-icon class="sidenav-icon">account_circle</mat-icon>
+                        <span class="icon-label">Add WebScraping</span>
+                    </button>
+                    <button mat-button class="navbutton" [routerLink]="['/getwebscrapingdata']">
+                        <mat-icon class="sidenav-icon">info</mat-icon>
+                        <span class="icon-label">Get WebScraping</span>
+                    </button>
+                </div>
+            </mat-sidenav>
+            <mat-sidenav-content class="sidenav-content" style="background-color: #F2F3F4">
+                <router-outlet></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
     </div>
-    <router-outlet></router-outlet>
 </div>

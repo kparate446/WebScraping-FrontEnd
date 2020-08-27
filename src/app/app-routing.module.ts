@@ -24,9 +24,7 @@ const routes: Routes = [
   }, {
     path: '',
     component: DashboardComponent, children: [
-
-      { path: '', redirectTo: 'addwebscraping', pathMatch: 'full' },
-          { path: 'addwebscraping', component: AddwebscrapingComponent },
+      { path: 'addwebscraping', component: AddwebscrapingComponent },
       { path: 'getwebscrapingdata', component: GetwebscrapingComponent }
     ]
   }

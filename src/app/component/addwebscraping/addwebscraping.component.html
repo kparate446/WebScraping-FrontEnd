@@ -1,1 +1,38 @@
-<p>addwebscraping works!</p>
+<div class="dashboard">
+    <div class="toolbar">
+        <mat-toolbar style="background-color:#EBDEF0">
+            <mat-toolbar-row>
+                <span style="color:blue">Add WebScraping</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+    <div class="web">
+        <form [formGroup]="webscraping">
+            <div>
+                <h2>Enter which website to scrap</h2>
+                <mat-form-field appearance="outline" fxFlext=50 style="height:20%;width: 100%;">
+                    <mat-label>website</mat-label>
+                    <input required matInput placeholder="Website" formControlName="addwebscraping">
+                    <mat-icon matSuffix>search</mat-icon>
+                    <mat-error *ngIf="webscraping.hasError('required', 'addwebscraping')">
+                        Website is required
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <h2>The format in which the data is to be included</h2>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label>Format</mat-label>
+                    <select matNativeControl required formControlName="format">
+                        <option value=".pdf">PDF</option>
+                        <option value=".csv">CSV</option>
+                        <option value=".html">HTML</option>
+                    </select>
+                </mat-form-field>
+            </div>
+            <div class="buttons">
+                <button color="primary" mat-raised-button style="width: 35%,height= 20%;" (click)="webscrapingForm()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

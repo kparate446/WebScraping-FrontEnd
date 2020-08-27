@@ -21,4 +21,7 @@ export class UserService {
   registration(data) {
     return this.HttpService.post(this.url + '/user/register', data);
   }
+  addwebscraping(data){
+    return this.HttpService.post(this.url + '/user/addwebscrape', data);
+  }
 }
