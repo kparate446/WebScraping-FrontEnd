@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user_services/user.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-getwebscraping',
@@ -10,17 +11,27 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class GetwebscrapingComponent implements OnInit {
   webscraping: FormGroup;
   submitted = false;
-  hide;
-
-  constructor(private addwebscrapingservice: UserService,
-        private formBuilder: FormBuilder,) { }
+  token: string = localStorage.getItem('token');
+ 
+  constructor(private getwebscrapingservice: UserService,
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router
+          ) { }
 
   ngOnInit(): void {
     this.webscraping = this.formBuilder.group({
-         type: ['', [Validators.required]]
+      filePath: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
   webscrapingForm() {
-      
+      this.getwebscrapingservice.getwebscraping(this.webscraping.value).subscribe(response => {
+      console.log(this.token);
+      console.log("Get Webscraping data");
+      console.log(response)
+      window.alert("Get Webscraping data Successfully");
+    }, error => {
+      console.log("Get Webscraping data response", error);
+    })
   }
 }

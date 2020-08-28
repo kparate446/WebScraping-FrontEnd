@@ -11,8 +11,10 @@ export class HttpService {
   httpClient: any;
   constructor(private http: HttpClient) { }
 
-  post(url, data) {
-    return this.http.post(url, data);
+  post(url, data,tokenRequired: boolean = false,headerOption = null): Observable<any> {
+    let httpoption=this.httpheader();
+    console.log(tokenRequired && headerOption);
+    return this.httpClient.post(this.baseUrl + url, data, tokenRequired && httpoption);
   }
   get(url, tokenRequired: boolean = false, headerOption = null): Observable<any> {
     let httpoption = this.httpheader();

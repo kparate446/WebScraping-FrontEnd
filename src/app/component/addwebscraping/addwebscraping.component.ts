@@ -10,8 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddwebscrapingComponent implements OnInit {
   webscraping: FormGroup;
   submitted = false;
-  hide;
-
+ 
   constructor(private addwebscrapingservice: UserService,
         private formBuilder: FormBuilder,) { }
 
@@ -24,7 +23,7 @@ export class AddwebscrapingComponent implements OnInit {
   }
   webscrapingForm() {
     this.addwebscrapingservice.addwebscraping(this.webscraping.value).subscribe(response => {
-      localStorage.setItem('token', response['data']);
+      localStorage.getItemsetItem('token', response['data']);
       console.log("Add Webscraping data");
       console.log(response)
       window.alert("Add Webscraping data Successfully");

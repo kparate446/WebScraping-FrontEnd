@@ -10,17 +10,29 @@ exports.GetwebscrapingComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var GetwebscrapingComponent = /** @class */ (function () {
-    function GetwebscrapingComponent(addwebscrapingservice, formBuilder) {
-        this.addwebscrapingservice = addwebscrapingservice;
+    function GetwebscrapingComponent(getwebscrapingservice, formBuilder, route, router) {
+        this.getwebscrapingservice = getwebscrapingservice;
         this.formBuilder = formBuilder;
+        this.route = route;
+        this.router = router;
         this.submitted = false;
+        this.token = localStorage.getItem('token');
     }
     GetwebscrapingComponent.prototype.ngOnInit = function () {
         this.webscraping = this.formBuilder.group({
-            type: ['', [forms_1.Validators.required]]
+            filePath: ['', [forms_1.Validators.required, forms_1.Validators.minLength(5)]]
         });
     };
     GetwebscrapingComponent.prototype.webscrapingForm = function () {
+        var _this = this;
+        this.getwebscrapingservice.getwebscraping(this.webscraping.value).subscribe(function (response) {
+            console.log(_this.token);
+            console.log("Get Webscraping data");
+            console.log(response);
+            window.alert("Get Webscraping data Successfully");
+        }, function (error) {
+            console.log("Get Webscraping data response", error);
+        });
     };
     GetwebscrapingComponent = __decorate([
         core_1.Component({

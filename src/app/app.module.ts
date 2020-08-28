@@ -51,7 +51,7 @@ import { GetwebscrapingComponent } from './component/getwebscraping/getwebscrapi
     MatToolbarModule,
     MatDividerModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,8 +12,11 @@
             <div class="getdata">
                 <mat-form-field appearance="outline" style=margin-right:5%;>
                     <mat-label>file path</mat-label>
-                    <input required matInput placeholder="file path" formControlName="getwebscraping">
+                    <input required matInput placeholder="file path" formControlName="filePath">
                     <mat-icon matSuffix>search</mat-icon>
+                    <mat-error *ngIf="webscraping.hasError('required', 'filePath')">
+                        file path is required
+                    </mat-error>
                 </mat-form-field>
                 <button color="primary" mat-raised-button style="height:200%;margin-top: 3%;" (click)="webscrapingForm()">Submit</button>
             </div>
