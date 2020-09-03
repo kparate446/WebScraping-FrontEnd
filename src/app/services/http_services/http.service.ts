@@ -11,8 +11,8 @@ export class HttpService {
   httpClient: any;
   constructor(private http: HttpClient) { }
 
-  post(url, data,tokenRequired: boolean = false,headerOption = null): Observable<any> {
-    let httpoption=this.httpheader();
+  post(url, data, tokenRequired: boolean = false, headerOption = null): Observable<any> {
+    let httpoption = this.httpheader();
     console.log(tokenRequired && headerOption);
     return this.httpClient.post(this.baseUrl + url, data, tokenRequired && httpoption);
   }
@@ -30,6 +30,9 @@ export class HttpService {
     let httpoption = this.httpheader();
     console.log(tokenRequired && headerOption);
     return this.httpClient.delete(this.baseUrl + url, tokenRequired && httpoption)
+  }
+  public postRequest(url: any, data: any): any {
+    return this.http.post(this.baseUrl + url, data, { headers: new HttpHeaders().set("token", localStorage.getItem('token')) });
   }
   httpheader() {
     var token = localStorage.getItem("token")

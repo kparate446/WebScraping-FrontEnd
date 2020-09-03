@@ -24,7 +24,6 @@ var AddwebscrapingComponent = /** @class */ (function () {
     };
     AddwebscrapingComponent.prototype.webscrapingForm = function () {
         this.addwebscrapingservice.addwebscraping(this.webscraping.value).subscribe(function (response) {
-            localStorage.getItemsetItem('token', response['data']);
             console.log("Add Webscraping data");
             console.log(response);
             window.alert("Add Webscraping data Successfully");

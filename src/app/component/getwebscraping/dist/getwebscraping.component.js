@@ -25,7 +25,9 @@ var GetwebscrapingComponent = /** @class */ (function () {
     };
     GetwebscrapingComponent.prototype.webscrapingForm = function () {
         var _this = this;
-        this.getwebscrapingservice.getwebscraping(this.webscraping.value).subscribe(function (response) {
+        this.getwebscrapingservice.getwebscraping("?filePath=" + this.webscraping.value).subscribe(function (response) {
+            // ?filePath=C%3A%5CUsers%5CHP%5CDesktop%5CResume.pdf
+            // C:\Users\HP\Desktop\Resume.pdf
             console.log(_this.token);
             console.log("Get Webscraping data");
             console.log(response);

@@ -11,13 +11,12 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class GetwebscrapingComponent implements OnInit {
   webscraping: FormGroup;
   submitted = false;
-  token: string = localStorage.getItem('token');
+  hide;
  
   constructor(private getwebscrapingservice: UserService,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
-        private router: Router
-          ) { }
+        private router: Router) { }
 
   ngOnInit(): void {
     this.webscraping = this.formBuilder.group({
@@ -25,8 +24,7 @@ export class GetwebscrapingComponent implements OnInit {
     });
   }
   webscrapingForm() {
-      this.getwebscrapingservice.getwebscraping(this.webscraping.value).subscribe(response => {
-      console.log(this.token);
+      this.getwebscrapingservice.getwebscraping("?filePath="+this.webscraping.value).subscribe(response => {
       console.log("Get Webscraping data");
       console.log(response)
       window.alert("Get Webscraping data Successfully");

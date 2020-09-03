@@ -9,27 +9,24 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 })
 export class UserService {
   url = environment.url;
-  constructor(public HttpService: HttpService,private http: HttpClient) { }
+  constructor(public HttpService: HttpService, private http: HttpClient) { }
 
-  login(data) {
+  public login(data) {
     return this.HttpService.post(this.url + '/user/login', data);
   }
-  forgotpassword(data) {
+  public forgotpassword(data) {
     return this.HttpService.post(this.url + '/user/forgotpassword', data);
   }
-  resetpassword(data) {
+  public resetpassword(data) {
     return this.HttpService.post(this.url + '/user/resetpassword', data);
   }
-  registration(data) {
+  public registration(data) {
     return this.HttpService.post(this.url + '/user/register', data);
   }
-  addwebscraping(data){
+  public addwebscraping(data) {
     return this.HttpService.post(this.url + '/webScrape/addwebscripe', data);
-  } 
-  getwebscraping(data): Observable<any> {
-    return this.http.post(this.url + '/webScrape/getwebscripe',data, {
-      headers: new HttpHeaders().set("jwt_token", localStorage.getItem("token")),
-      observe: 'response'
-    });
   }
+  public getwebscraping(data:any):any{
+    return this.HttpService.postRequest('/webScrape/getwebscripe',data);
+   }
 }
