@@ -7,14 +7,14 @@
         </mat-toolbar>
     </div>
     <div class="web">
-        <form [formGroup]="webscraping">
-            <div>
+        <form [formGroup]="addwebscrapingdata">
+            <div class="formGroup">
                 <h2>Enter which website to scrap</h2>
                 <mat-form-field appearance="outline" fxFlext=50 style="height:20%;width: 100%;">
                     <mat-label>website</mat-label>
                     <input required matInput placeholder="Website" formControlName="addwebscraping">
                     <mat-icon matSuffix>search</mat-icon>
-                    <mat-error *ngIf="webscraping.hasError('required', 'addwebscraping')">
+                    <mat-error *ngIf="addwebscrapingdata.hasError('required', 'addwebscraping')">
                         Website is required
                     </mat-error>
                 </mat-form-field>
@@ -24,9 +24,9 @@
                 <mat-form-field appearance="fill" style="width: 100%;">
                     <mat-label>Format</mat-label>
                     <select matNativeControl required formControlName="format">
-                        <option value=".pdf">PDF</option>
-                        <option value=".csv">CSV</option>
-                        <option value=".html">HTML</option>
+                        <option value="pdf">PDF</option>
+                        <option value="csv">CSV</option>
+                        <option value="html">HTML</option>
                     </select>
                 </mat-form-field>
             </div>

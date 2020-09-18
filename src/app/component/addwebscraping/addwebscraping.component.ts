@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user_services/user.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-addwebscraping',
@@ -8,24 +8,28 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./addwebscraping.component.scss']
 })
 export class AddwebscrapingComponent implements OnInit {
-  webscraping: FormGroup;
+  addwebscrapingdata: FormGroup;
   submitted = false;
 
   constructor(private addwebscrapingservice: UserService,
-    private formBuilder: FormBuilder,) { }
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.webscraping = this.formBuilder.group({
+    this.addwebscrapingdata = this.formBuilder.group({
       addwebscraping: ['', [Validators.required, Validators.minLength(5)]],
       format: ['', [Validators.required, Validators.minLength(2)]],
       type: ['', [Validators.required]]
     });
   }
+  get f() { return this.addwebscrapingdata.controls; }
+
   webscrapingForm() {
-    this.addwebscrapingservice.addwebscraping(this.webscraping.value).subscribe(response => {
-      console.log("Add Webscraping data");
-      console.log(response)
+    var data = this.addwebscrapingdata.value.addwebscraping;
+    var format = this.addwebscrapingdata.value.format;
+    var encoded = encodeURIComponent(data);
+    this.addwebscrapingservice.addwebscraping("?url=" + encoded + "&format=" + format).subscribe(response => {
       window.alert("Add Webscraping data Successfully");
+      console.log("Add Webscraping data");
     }, error => {
       console.log("Add Webscraping data response", error);
     })

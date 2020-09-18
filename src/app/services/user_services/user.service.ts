@@ -9,24 +9,37 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 })
 export class UserService {
   url = environment.url;
-  constructor(public HttpService: HttpService, private http: HttpClient) { }
+  constructor(public httpService: HttpService) { }
 
-  public login(data) {
-    return this.HttpService.post(this.url + '/user/login', data);
+  login(data) {
+    return this.httpService.post(this.url + '/user/login', data);
   }
-  public forgotpassword(data) {
-    return this.HttpService.post(this.url + '/user/forgotpassword', data);
+
+  forgotpassword(data) {
+    return this.httpService.post(this.url + '/user/forgotpassword', data);
   }
-  public resetpassword(data) {
-    return this.HttpService.post(this.url + '/user/resetpassword', data);
+
+  resetpassword(data) {
+    return this.httpService.post(this.url + '/user/resetpassword', data);
   }
-  public registration(data) {
-    return this.HttpService.post(this.url + '/user/register', data);
+
+  registration(data) {
+    return this.httpService.post(this.url + '/user/register', data);
   }
-  public addwebscraping(data) {
-    return this.HttpService.post(this.url + '/webScrape/addwebscripe', data);
+  
+  addwebscraping(data): Observable<any> {
+    console.log(localStorage.getItem("token"));
+    return this.httpService.post1(this.url + '/webScrape/addwebscripe' + data, null, {
+      headers: new HttpHeaders().set("token", localStorage.getItem("token")),
+      observe: 'response'
+    });
   }
-  public getwebscraping(data:any):any{
-    return this.HttpService.postRequest('/webScrape/getwebscripe',data);
-   }
+
+  getwebscraping(data): Observable<any> {
+    console.log(localStorage.getItem("token"));
+    return this.httpService.post1(this.url + '/webScrape/getwebscripe' + data, null, {
+      headers: new HttpHeaders().set("token", localStorage.getItem("token")),
+      observe: 'response'
+    });
+  }
 }

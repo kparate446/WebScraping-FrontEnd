@@ -14,7 +14,7 @@
                     <button mat-icon-button class="refresh" [routerLink]="['/']">
                         <mat-icon matTooltip="Refresh">refresh</mat-icon>
                     </button>
-                    <button class="signout-button" mat-stroked-button color="primary">Signout</button>
+                    <button class="signout-button" mat-raised-button (click)=logout() color="primary">Signout</button>
                 </div>
             </mat-toolbar-row>
         </mat-toolbar>
