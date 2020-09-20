@@ -7,28 +7,16 @@
     width: 100%;
 }
 
+img {
+    margin-left: -0.5%;
+    padding: 1%;
+    width: 25px;
+}
+
 .mat-toolbar {
     display: flex;
     background-color: #fff;
     border: 1px solid lightgray;
-    border-radius: 7px;
-}
-
-.fundoo-icon {
-    display: flex;
-    padding-right: 10px;
-}
-
-.search-input {
-    display: flex;
-    border: none;
-    height: 40px;
-    width: 300px;
-    outline: none;
-}
-
-.grid {
-    margin-left: 13%;
 }
 
 .menu {
@@ -61,7 +49,7 @@
     justify-content: space-around !important;
     background-color: transparent;
     border: none;
-    margin-top: 10px;
+    margin-top: 18px;
 }
 
 .navbutton {
@@ -95,32 +83,11 @@
     border-bottom-right-radius: 2em;
 }
 
-.divider {
-    margin: 20px 0 20px 0;
-}
-
-.label {
-    margin-left: 30px;
-}
-
 .sidenav-content {
     justify-content: center;
     width: 100%;
     align-content: center;
     height: 100%;
-}
-
-.header {
-    justify-content: center;
-    align-content: center;
-}
-
-.profile {
-    border-radius: 50%;
-}
-
-img {
-    padding: 1%;
 }
 
 .example-spacer {

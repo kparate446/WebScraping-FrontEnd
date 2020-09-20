@@ -7,11 +7,11 @@
                         <mat-icon matTooltip="Main menu">menu</mat-icon>
                     </button>
                 </span>
-                <img src="../../../assets/web-scraping-image.jpg" style="width: '1.5%'">
+                <img src="../../../assets/web-scraping-image.jpg">
                 <span style="color:blue">WebScraping</span>
                 <span class="example-spacer"></span>
                 <div class="rightside-icons">
-                    <button mat-icon-button class="refresh" [routerLink]="['/']">
+                    <button mat-icon-button class="refresh" style="margin-right: 5%;" [routerLink]="['/']">
                         <mat-icon matTooltip="Refresh">refresh</mat-icon>
                     </button>
                     <button class="signout-button" mat-raised-button (click)=logout() color="primary">Signout</button>
