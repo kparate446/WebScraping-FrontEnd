@@ -23,7 +23,8 @@ import { RegistrationComponent } from './component/registration/registration.com
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import {MatListModule} from '@angular/material/list';
 import { AddwebscrapingComponent } from './component/addwebscraping/addwebscraping.component';
-import { GetwebscrapingComponent } from './component/getwebscraping/getwebscraping.component';
+import { GetwebscrapingsiteComponent } from './component/getwebscrapingsite/getwebscrapingsite.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { GetwebscrapingComponent } from './component/getwebscraping/getwebscrapi
     RegistrationComponent,
     DashboardComponent,
     AddwebscrapingComponent,
-    GetwebscrapingComponent,
+    GetwebscrapingsiteComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +53,7 @@ import { GetwebscrapingComponent } from './component/getwebscraping/getwebscrapi
     MatDividerModule,
     MatSidenavModule,
     MatListModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

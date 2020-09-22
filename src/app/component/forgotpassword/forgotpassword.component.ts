@@ -27,7 +27,7 @@ export class ForgotpasswordComponent implements OnInit {
     console.log("Sent the token in mail");
     this.forgotpasswordservice.forgotpassword(this.ForgotPassword.value).subscribe(response => {
       localStorage.setItem('token', response['data']);  
-      window.alert("User Logged-in Successfully");
+      window.alert("Forgot password Successfully");
     }, error => {
       console.log("Forgot password response", error);
     })

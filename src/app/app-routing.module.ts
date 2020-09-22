@@ -6,7 +6,7 @@ import { ResetpasswordComponent } from './component/resetpassword/resetpassword.
 import { RegistrationComponent } from './component/registration/registration.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AddwebscrapingComponent } from './component/addwebscraping/addwebscraping.component';
-import { GetwebscrapingComponent } from './component/getwebscraping/getwebscraping.component';
+import { GetwebscrapingsiteComponent } from './component/getwebscrapingsite/getwebscrapingsite.component';
 
 const routes: Routes = [
   {
@@ -25,7 +25,7 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent, children: [
       { path: 'addwebscraping', component: AddwebscrapingComponent },
-      { path: 'getwebscrapingdata', component: GetwebscrapingComponent }
+      { path: 'getwebscrapingdata', component: GetwebscrapingsiteComponent}
     ]
   }
 ];

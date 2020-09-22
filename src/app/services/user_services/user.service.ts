@@ -19,16 +19,18 @@ export class UserService {
     return this.httpService.post(this.url + '/user/forgotpassword', data);
   }
 
-  resetpassword(data) {
-    return this.httpService.post(this.url + '/user/resetpassword', data);
+  resetpassword(data): Observable<any>{
+    return this.httpService.post1(this.url + '/user/resetpassword'+ data,null,{
+      headers: new HttpHeaders().set("token", localStorage.getItem("token")),
+      observe: 'response'
+    });
   }
 
   registration(data) {
     return this.httpService.post(this.url + '/user/register', data);
   }
-  
+
   addwebscraping(data): Observable<any> {
-    console.log(localStorage.getItem("token"));
     return this.httpService.post1(this.url + '/webScrape/addwebscripe' + data, null, {
       headers: new HttpHeaders().set("token", localStorage.getItem("token")),
       observe: 'response'
@@ -36,8 +38,14 @@ export class UserService {
   }
 
   getwebscraping(data): Observable<any> {
-    console.log(localStorage.getItem("token"));
     return this.httpService.post1(this.url + '/webScrape/getwebscripe' + data, null, {
+      headers: new HttpHeaders().set("token", localStorage.getItem("token")),
+      observe: 'response'
+    });
+  }
+
+  getwebscrapingsite(data): Observable<any> {
+    return this.httpService.get(this.url + '/webScrape/getalluserscrapedsite' + data, null, {
       headers: new HttpHeaders().set("token", localStorage.getItem("token")),
       observe: 'response'
     });

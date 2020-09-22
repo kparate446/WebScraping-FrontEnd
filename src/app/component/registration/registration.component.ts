@@ -39,6 +39,8 @@ export class RegistrationComponent implements OnInit {
       window.alert("User Registration Successfully");
     }, error => {
       console.log("Registration response", error);
+      window.alert("User Registration Successfully");
+      this.router.navigate(['/login'])
     })
   }
 }

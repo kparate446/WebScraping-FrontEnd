@@ -32,6 +32,7 @@ export class AddwebscrapingComponent implements OnInit {
       console.log("Add Webscraping data");
     }, error => {
       console.log("Add Webscraping data response", error);
+      window.alert("Add Webscraping data Successfully");
      })
   }
 }
