@@ -10,7 +10,8 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 export class UserService {
   url = environment.url;
   constructor(public httpService: HttpService) { }
-
+  token1 = localStorage.getItem("token");
+ 
   login(data) {
     return this.httpService.post(this.url + '/user/login', data);
   }
@@ -18,9 +19,9 @@ export class UserService {
   forgotpassword(data) {
     return this.httpService.post(this.url + '/user/forgotpassword', data);
   }
-
-  resetpassword(data): Observable<any>{
-    return this.httpService.post1(this.url + '/user/resetpassword'+ data,null,{
+  
+  resetpassword(data,data1): Observable<any>{
+    return this.httpService.postdata(this.url + '/user/resetpassword1'+ data,data1,null,{
       headers: new HttpHeaders().set("token", localStorage.getItem("token")),
       observe: 'response'
     });

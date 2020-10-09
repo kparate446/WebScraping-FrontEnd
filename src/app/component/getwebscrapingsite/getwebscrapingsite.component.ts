@@ -13,8 +13,8 @@ export class GetwebscrapingsiteComponent implements OnInit {
   submitted = false;
   hide;
   data = "";
-  printdata = "";
-  
+  printdata: string = '<strong></strong>';
+
   constructor(private getwebscrapingsiteservice: UserService,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -22,7 +22,7 @@ export class GetwebscrapingsiteComponent implements OnInit {
 
   ngOnInit(): void {
     this.webscraping = this.formBuilder.group({
-      filePath: ['',[Validators.required, Validators.minLength(5)]],
+      filePath: ['', [Validators.required, Validators.minLength(5)]],
       format: ['', [Validators.required, Validators.minLength(2)]],
       type: ['', [Validators.required]]
     });
@@ -35,7 +35,6 @@ export class GetwebscrapingsiteComponent implements OnInit {
       console.log("Get WebscrapingSite data");
       this.data = response.body.data;
       console.log(this.data);
-      // window.alert("Get WebscrapingSite data Successfully");
     }, error => {
       console.log("Get WebscrapingSite data response", error);
     })
@@ -49,7 +48,7 @@ export class GetwebscrapingsiteComponent implements OnInit {
     this.getwebscrapingsiteservice.getwebscraping("?filePath=" + encoded).subscribe(response => {
       console.log("Get Webscraping data");
       this.printdata = response.body.data;
-      // window.alert("Get Webscraping data Successfully");
+      console.log(this.printdata);
     }, error => {
       console.log("Get Webscraping data response", error);
     })

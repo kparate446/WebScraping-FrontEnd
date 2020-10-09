@@ -17,6 +17,9 @@ export class HttpService {
   post1(url,data,header){
     return this.http.post(url,data,header);
   }
+  postdata(url,data,data1,header){
+    return this.http.post(url,data,header);
+  }
   get(url, data, header){
     return this.http.get(url,header);
   }

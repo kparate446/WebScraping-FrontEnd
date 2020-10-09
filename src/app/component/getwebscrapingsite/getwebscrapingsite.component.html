@@ -12,7 +12,7 @@
             <div class="getdata">
                 <mat-form-field appearance="fill" style="width: 70%;">
                     <mat-label>Format</mat-label>
-                    <select matNativeControl required formControlName="format" (dblclick)="getwebscrapingForm()">
+                    <select matNativeControl required formControlName="format" (keypress)="getwebscrapingForm()">
                         <option value="pdf">PDF</option>
                         <option value="csv">CSV</option>
                         <option value="html">HTML</option>
@@ -39,7 +39,13 @@
         </form>
     </div>
     <mat-divider></mat-divider>
-    <p>
-        {{printdata}}
-    </p>
+    <!-- <div>
+        <ul>
+            <li>
+                {{ printdata }}
+            </li>
+        </ul>
+    </div> -->
+    <div [innerHTML]="printdata"> {{ printdata }} </div>
+
 </div>
